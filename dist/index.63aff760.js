@@ -2958,14 +2958,32 @@ function App() {
     const [length, setLength] = (0, _react.useState)(10);
     const [numberChanged, setnumberChanged] = (0, _react.useState)(false);
     const [charChanged, setcharChanged] = (0, _react.useState)(false);
-    function generatePass() {
+    const generatePass = (0, _react.useCallback)(()=>{
         let str = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
         if (numberChanged) str += "0123456789";
         if (charChanged) str += "!@#$%^&*()_-+=<>";
         let pass = "";
         for(let i = 0; i < length; i++)pass += str[Math.floor(Math.random() * str.length)];
         setPassword(pass);
-    }
+    }, [
+        length,
+        numberChanged,
+        charChanged
+    ]);
+    // function generatePass(){
+    //     let str="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    //     if(numberChanged){
+    //         str+="0123456789"
+    //     };
+    //     if(charChanged){
+    //         str+="!@#$%^&*()_-+=<>";
+    //     }
+    //     let pass="";
+    //     for(let i=0;i<length;i++){
+    //         pass+=str[Math.floor(Math.random()*str.length)]
+    //     }
+    //     setPassword(pass);
+    // }
     (0, _react.useEffect)(()=>{
         generatePass();
     }, [
@@ -2983,7 +3001,7 @@ function App() {
                 ]
             }, void 0, true, {
                 fileName: "main.js",
-                lineNumber: 33,
+                lineNumber: 51,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -2996,7 +3014,7 @@ function App() {
                         onChange: (e)=>setLength(e.target.value)
                     }, void 0, false, {
                         fileName: "main.js",
-                        lineNumber: 35,
+                        lineNumber: 53,
                         columnNumber: 13
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
@@ -3006,7 +3024,7 @@ function App() {
                         ]
                     }, void 0, true, {
                         fileName: "main.js",
-                        lineNumber: 36,
+                        lineNumber: 54,
                         columnNumber: 13
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -3015,14 +3033,14 @@ function App() {
                         onChange: (e)=>setnumberChanged(!numberChanged)
                     }, void 0, false, {
                         fileName: "main.js",
-                        lineNumber: 38,
+                        lineNumber: 56,
                         columnNumber: 13
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
                         children: "Include Number"
                     }, void 0, false, {
                         fileName: "main.js",
-                        lineNumber: 39,
+                        lineNumber: 57,
                         columnNumber: 13
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -3031,31 +3049,31 @@ function App() {
                         onChange: (e)=>setcharChanged(!charChanged)
                     }, void 0, false, {
                         fileName: "main.js",
-                        lineNumber: 41,
+                        lineNumber: 59,
                         columnNumber: 13
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
                         children: "Include Special Character"
                     }, void 0, false, {
                         fileName: "main.js",
-                        lineNumber: 42,
+                        lineNumber: 60,
                         columnNumber: 13
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "main.js",
-                lineNumber: 34,
+                lineNumber: 52,
                 columnNumber: 9
             }, this)
         ]
     }, void 0, true);
 }
-_s(App, "0tLg7RS6pMS+W7141FPbkuWyhac=");
+_s(App, "6ISVQNZCBfOnwvjQeZ+5km2CJnY=");
 _c = App;
 const root = (0, _clientDefault.default).createRoot(document.getElementById('root'));
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(App, {}, void 0, false, {
     fileName: "main.js",
-    lineNumber: 49,
+    lineNumber: 67,
     columnNumber: 13
 }, undefined));
 var _c;
